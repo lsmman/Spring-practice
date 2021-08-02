@@ -1,16 +1,21 @@
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-
 plugins {
-    id 'org.springframework.boot' version '2.6.0'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'org.springframework.boot' version '2.5.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 group = 'com.lsmman'
 version = '0.0.1-SNAPSHOT'
 
+
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -21,3 +26,4 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
